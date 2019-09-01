@@ -1,0 +1,64 @@
+#######################################
+# Syntax Coloring Map For LibRastreadorGR
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+LibRastreadorGR	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+Initialize	KEYWORD2
+Update	KEYWORD2
+TurnOnLED	KEYWORD2
+TurnOffLED	KEYWORD2
+TurnOnRightLEDs	KEYWORD2
+TurnOffRightLEDs	KEYWORD2
+TurnOnLeftLEDs	KEYWORD2
+TurnOffLeftLEDs	KEYWORD2
+TurnOnCenterLEDs	KEYWORD2
+TurnOffCenterLEDs	KEYWORD2
+TurnOnRightBlueLED	KEYWORD2
+TurnOffRightBlueLED	KEYWORD2
+TurnOnLeftBlueLED	KEYWORD2
+TurnOffLeftBlueLED	KEYWORD2
+TurnOnAllLEDs	KEYWORD2
+TurnOffAllLEDs	KEYWORD2
+moveRightMotor	KEYWORD2
+moveLeftMotor	KEYWORD2
+moveRobot	KEYWORD2
+TurnOnIRMiddle	KEYWORD2
+TurnOffIRMiddle	KEYWORD2
+getMiddleSensor	KEYWORD2
+ReadMiddleLine	KEYWORD2
+TurnOnIRFront	KEYWORD2
+TurnOffIRFront	KEYWORD2
+ReadFrontSensors	KEYWORD2
+invertValuesSensor	KEYWORD2
+getCenter	KEYWORD2
+getCenterDerecha	KEYWORD2
+getCenterIzquierda	KEYWORD2
+getSensor	KEYWORD2
+getPID	KEYWORD2
+setPID	KEYWORD2
+BlancosIzquierda	KEYWORD2
+BlancosDerecha	KEYWORD2
+DetectaCambios	KEYWORD2
+DeterminarEstado	KEYWORD2
+MarcaEstado	KEYWORD2
+getNumCambios	KEYWORD2
+getNumBlancosDer	KEYWORD2
+getNumBlancosIzq	KEYWORD2
+getNumVotosIzq	KEYWORD2
+getNumVotosDer	KEYWORD2
+getNumVotosCen	KEYWORD2
+getEstadoActual	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
