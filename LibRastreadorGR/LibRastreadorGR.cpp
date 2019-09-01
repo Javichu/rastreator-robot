@@ -7,59 +7,15 @@ LibRastreadorGR::LibRastreadorGR(){
 
 void LibRastreadorGR::Initialize(){
     analogWriteResolution(12);
-    //lineLEDs = { O_LED4, O_LED5,O_LED6,O_LED7,O_LED8,O_LED9,O_LED10,O_LED11,O_LED12,O_LED13,O_LED14,O_LED15,O_LED16,O_LED17 };
-    lineLEDs[0] = O_LED4;
-    lineLEDs[1] = O_LED5;
-    lineLEDs[2] = O_LED6;
-    lineLEDs[3] = O_LED7;
-    lineLEDs[4] = O_LED8;
-    lineLEDs[5] = O_LED9;
-    lineLEDs[6] = O_LED10;
-    lineLEDs[7] = O_LED11;
-    lineLEDs[8] = O_LED12;
-    lineLEDs[9] = O_LED13;
-    lineLEDs[10] = O_LED14;
-    lineLEDs[11] = O_LED15;
-    lineLEDs[12] = O_LED16;
-    lineLEDs[13] = O_LED17;
-
-    //middleSensorPins = { I_IR1, I_IR2, I_IR3, I_IR4, I_IR5, I_IR6, I_IR7, I_IR8, I_IR9 };
-    middleSensorPins[0] = I_IR1;
-    middleSensorPins[1] = I_IR2;
-    middleSensorPins[2] = I_IR3;
-    middleSensorPins[3] = I_IR4;
-    middleSensorPins[4] = I_IR5;
-    middleSensorPins[5] = I_IR6;
-    middleSensorPins[6] = I_IR7;
-    middleSensorPins[7] = I_IR8;
-    middleSensorPins[8] = I_IR9;
-
+    lineLEDs = { O_LED4, O_LED5,O_LED6,O_LED7,O_LED8,O_LED9,O_LED10,O_LED11,O_LED12,O_LED13,O_LED14,O_LED15,O_LED16,O_LED17 };
+    middleSensorPins = { I_IR1, I_IR2, I_IR3, I_IR4, I_IR5, I_IR6, I_IR7, I_IR8, I_IR9 };
     #ifndef WITHBUMPER
     	frontSensorPins = { I_IR10, I_IR11, I_IR12, I_IR13, I_IR14, I_IR15, I_IR16, I_IR17, I_IR18, I_IR19, I_IR20, I_IR21  };
     	unsigned char listaIN [] = { I_IR10, I_IR11, I_IR12, I_IR13, I_IR14, I_IR15, I_IR16, I_IR17, I_IR18, I_IR19, I_IR20, I_IR21, I_IR1, I_IR2, I_IR3, I_IR4, I_IR5, I_IR6, I_IR7, I_IR8, I_IR9, O_LED4, O_LED5,O_LED6,O_LED7,O_LED8,O_LED9,O_LED10,O_LED11,O_LED12,O_LED13,O_LED14,O_LED15,O_LED16,I_BUTTON };
     	unsigned char listaOUT [] = {O_IRON_AN, O_IRON_DG , O_BUZZER,  O_LED4, O_LED5,O_LED6,O_LED7,O_LED8,O_LED9,O_LED10,O_LED11,O_LED12,O_LED13,O_LED14,O_LED15,O_LED16,O_LED17,O_Ain1,O_Ain2,O_Bin1,O_Bin2};
     #endif
     #ifdef WITHBUMPER
-    	//frontSensorPins = {I_IR22, I_IR23, I_IR24, I_IR10, I_IR11, I_IR12, I_IR13, I_IR14, I_IR15, I_IR16, I_IR17, I_IR18, I_IR19, I_IR20, I_IR21, I_IR25, I_IR26, I_IR27};
-    	frontSensorPins[0] = I_IR22;
-    	frontSensorPins[1] = I_IR23;
-    	frontSensorPins[2] = I_IR24;
-    	frontSensorPins[3] = I_IR10;
-    	frontSensorPins[4] = I_IR11;
-    	frontSensorPins[5] = I_IR12;
-    	frontSensorPins[6] = I_IR13;
-    	frontSensorPins[7] = I_IR14;
-    	frontSensorPins[8] = I_IR15;
-    	frontSensorPins[9] = I_IR16;
-    	frontSensorPins[10] = I_IR17;
-    	frontSensorPins[11] = I_IR18;
-    	frontSensorPins[12] = I_IR19;
-    	frontSensorPins[13] = I_IR20;
-    	frontSensorPins[14] = I_IR21;
-    	frontSensorPins[15] = I_IR25;
-    	frontSensorPins[16] = I_IR26;
-    	frontSensorPins[17] = I_IR27;
-
+    	frontSensorPins = {I_IR22, I_IR23, I_IR24, I_IR10, I_IR11, I_IR12, I_IR13, I_IR14, I_IR15, I_IR16, I_IR17, I_IR18, I_IR19, I_IR20, I_IR21, I_IR25, I_IR26, I_IR27};
     	unsigned char listaIN [] = {I_IR22, I_IR23, I_IR10, I_IR11, I_IR12, I_IR13, I_IR14, I_IR15, I_IR16, I_IR17, I_IR18, I_IR19, I_IR20, I_IR21, I_IR24, I_IR25, I_IR1, I_IR2, I_IR3, I_IR4, I_IR5, I_IR6, I_IR7, I_IR8, I_IR9, O_LED4, O_LED5,O_LED6,O_LED7,O_LED8,O_LED9,O_LED10,O_LED11,O_LED12,O_LED13,O_LED14,O_LED15,O_LED16,I_BUTTON };
     	unsigned char listaOUT [] = {O_IRON_AN, O_IRON_DG , O_BUZZER,  O_LED4, O_LED5,O_LED6,O_LED7,O_LED8,O_LED9,O_LED10,O_LED11,O_LED12,O_LED13,O_LED14,O_LED15,O_LED16,O_LED17,O_Ain1,O_Ain2,O_Bin1,O_Bin2};
     #endif
@@ -78,7 +34,7 @@ void LibRastreadorGR::Initialize(){
     derivative=0;
     integral=0;
     currentSpeed = MAXSPEED;
-    //currentSpeed = FASTSPEED;
+    currentSpeed = FASTSPEED;
     
     contadorLEDs = 0;
     estado = CENTRO;

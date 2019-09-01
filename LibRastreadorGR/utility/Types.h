@@ -7,6 +7,19 @@
 //#define DEBUG 0
 //#define BOTONERA 3
 
+//#define INTERRUPCIONES 11
+#ifdef INTERRUPCIONES
+  double ANALOG_MIN = 0.0;
+  double ANALOG_MAX = 670.0;
+  double P_MIN = 0.2;
+  double P_MAX = 6.0;
+  double D_MIN = 0.0;
+  double D_MAX = 20.0;
+  volatile double proporcional = P_MIN;
+  volatile double derivativa = D_MIN;
+  double RANGO_P = 0.1;
+  double RANGO_D = 0.3;
+#endif
 // Descomentar para que cuando pierda la linea con los sensores centrales
 // el robot se pare
 //#define SEGURIDAD 1
@@ -116,7 +129,7 @@ static const bool FALSE = false;
 #define  O_IRON_AN	29   // Infrarrojos Analogicos (Pull-Up)
 #define  O_IRON_DG	27   // Infrarojos Digitales (Pull-Down)
 //On/off infrarrojos bumper
-#define  O_IRON_AN_BUMPER 14
+#define O_IRON_AN_BUMPER 14
 
 //Motor
 //Canal A

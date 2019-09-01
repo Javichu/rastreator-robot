@@ -91,24 +91,24 @@ class LibRastreadorGR{
         int speedRight;
         
     private:
-        unsigned char lineLEDs[14];
+        unsigned char lineLEDs [14];
         
-        unsigned char middleSensorPins[9];
+        unsigned char middleSensorPins [9];
 
 		#ifdef WITHBUMPER
-        	unsigned char frontSensorPins[18];
-        	unsigned int frontSensorValues[18];
-        	unsigned char sensorAuxAnt[18];
-        	bool sensorLeido[18];
+        	unsigned char frontSensorPins [18];
+        	unsigned int frontSensorValues [18];
+        	unsigned char sensorAuxAnt [18];
+        	bool sensorLeido [18];
         #endif
         #ifndef WITHBUMPER
-        	unsigned char frontSensorPins[12];
-        	unsigned int frontSensorValues[12];
-        	unsigned char sensorAuxAnt[12];
-        	bool sensorLeido[12];
+        	unsigned char frontSensorPins [12];
+        	unsigned int frontSensorValues [12];
+        	unsigned char sensorAuxAnt [12];
+        	bool sensorLeido [12];
         #endif
         
-        bool middleSensorValues[9];
+        bool middleSensorValues [9];
         unsigned int middleSensorValue;
         
         
